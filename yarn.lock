@@ -259,6 +259,11 @@
   dependencies:
     "color-convert" "^2.0.1"
 
+"arr-rotate@^1.0.0":
+  "integrity" "sha512-yOzOZcR9Tn7enTF66bqKorGGH0F36vcPaSWg8fO0c0UYb3LX3VMXj5ZxEqQLNOecAhlRJ7wYZja5i4jTlnbIfQ=="
+  "resolved" "https://registry.npmjs.org/arr-rotate/-/arr-rotate-1.0.0.tgz"
+  "version" "1.0.0"
+
 "astral-regex@^2.0.0":
   "integrity" "sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ=="
   "resolved" "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
@@ -430,6 +435,11 @@
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
   "version" "3.1.1"
 
+"escape-string-regexp@^1.0.5":
+  "integrity" "sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ="
+  "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
+  "version" "1.0.5"
+
 "escape-string-regexp@^2.0.0":
   "integrity" "sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w=="
   "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz"
@@ -494,6 +504,13 @@
   "integrity" "sha512-On2N+BpYJ15xIC974QNVuYGMOlEVt4s0EOI3wwMqOmK1fdDY+FN/zltPV8vosq4ad4c/gJ1KHScUn/6AWIgiow=="
   "resolved" "https://registry.npmjs.org/fastest-levenshtein/-/fastest-levenshtein-1.0.12.tgz"
   "version" "1.0.12"
+
+"figures@^3.2.0":
+  "integrity" "sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg=="
+  "resolved" "https://registry.npmjs.org/figures/-/figures-3.2.0.tgz"
+  "version" "3.2.0"
+  dependencies:
+    "escape-string-regexp" "^1.0.5"
 
 "fill-range@^7.0.1":
   "integrity" "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ=="
@@ -560,6 +577,15 @@
   "resolved" "https://registry.npmjs.org/indent-string/-/indent-string-4.0.0.tgz"
   "version" "4.0.0"
 
+"ink-select-input@^4.2.1":
+  "integrity" "sha512-WvlrYdwmdnD6/nE/9mNhaaanTQOKmwy/hT/vuAqbDec3PUQBQ8Pkwszii/8eGvDTx5bGiUHu18P9D5IoB/ERaw=="
+  "resolved" "https://registry.npmjs.org/ink-select-input/-/ink-select-input-4.2.1.tgz"
+  "version" "4.2.1"
+  dependencies:
+    "arr-rotate" "^1.0.0"
+    "figures" "^3.2.0"
+    "lodash.isequal" "^4.5.0"
+
 "ink-text-input@^4.0.3":
   "integrity" "sha512-eQD01ik9ltmNoHmkeQ2t8LszYkv2XwuPSUz3ie/85qer6Ll/j0QSlSaLNl6ENHZakBHdCBVZY04iOXcLLXA0PQ=="
   "resolved" "https://registry.npmjs.org/ink-text-input/-/ink-text-input-4.0.3.tgz"
@@ -568,7 +594,7 @@
     "chalk" "^4.1.0"
     "type-fest" "^0.15.1"
 
-"ink@^3.0.0-3", "ink@^3.2.0":
+"ink@^3.0.0-3", "ink@^3.0.5", "ink@^3.2.0":
   "integrity" "sha512-firNp1q3xxTzoItj/eOOSZQnYSlyrWks5llCTVX37nJ59K3eXbQ8PtzCguqo8YI19EELo5QxaKnJd4VxzhU8tg=="
   "resolved" "https://registry.npmjs.org/ink/-/ink-3.2.0.tgz"
   "version" "3.2.0"
@@ -695,6 +721,11 @@
   "version" "5.0.0"
   dependencies:
     "p-locate" "^4.1.0"
+
+"lodash.isequal@^4.5.0":
+  "integrity" "sha1-QVxEePK8wwEgwizhDtMib30+GOA="
+  "resolved" "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz"
+  "version" "4.5.0"
 
 "lodash@^4.17.20":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="

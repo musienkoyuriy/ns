@@ -3,7 +3,7 @@ import App from './App';
 import { render } from 'ink';
 
 const renderApp = () => {
-    render(<App />)
+  render(<App />)
 };
 
 export default renderApp;
