@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "rootDir": "src",
+      // "allowSyntheticDefaultImports": true,
+      
+      "types": ["react"],
+      "esModuleInterop": true,
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "skipLibCheck": true,
+      "strict": false,
+      "lib": ["es6", "es2017"],
+      "resolveJsonModule": true,
+      // "declaration": true,
+      "jsx": "react",
+      "sourceMap": true,
+      "baseUrl": ".",
+      "paths": {
+        "@app/*": ["src/*"]
+      }
+    },
+    "include": ["src"]
+  }
+  
