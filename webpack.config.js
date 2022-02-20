@@ -10,9 +10,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
 
   entry: {
-    index: "src/index.ts",
-    // child_find: "src/lib/childProcesses/child_find.ts",
-    // child_delete: "src/lib/childProcesses/child_delete.ts",
+    index: "src/index.ts"
   },
   output: {
     filename: "[name].js",
