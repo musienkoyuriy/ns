@@ -1,7 +1,8 @@
 import React from 'react';
 import SelectInput from 'ink-select-input';
 import { Text } from 'ink';
-import { parseScripts } from '@app/lib/services/parse-scripts';
+import { parseScripts } from '@app/lib/services/parse';
+import { execute } from '@app/lib/services/execute';
 
 const ScriptsList: React.FC = (_): JSX.Element => {
   const [selectedScript, setSelectedScript] = React.useState<string>('First');
@@ -12,7 +13,8 @@ const ScriptsList: React.FC = (_): JSX.Element => {
   }, []);
 
   const handleSelect = item => {
-    setSelectedScript(item.label)
+    // setSelectedScript(item.label)
+    execute(item.value)
   };
 
   return <>

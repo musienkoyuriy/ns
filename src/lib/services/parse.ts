@@ -1,12 +1,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const packageJSONPath = path.resolve(__dirname, '../package.json');
+const packageJSONPath = path.resolve(__dirname, '..', 'package.json');
 
-const getScriptsFromFile = file => {
-  console.log(file)
-  return Object.keys(file.scripts);
-};
+const getScriptsFromFile = (file: { [key: string]: any }): string[] => Object.keys(file.scripts);
 
 const mapScriptsToSelectList = (scripts: string[]) => {
   return scripts.map((script: string) => ({ label: script, value: script }));
