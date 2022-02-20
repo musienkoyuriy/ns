@@ -31,6 +31,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.execute = void 0;
 const child_process_1 = __webpack_require__(/*! child_process */ "child_process");
 const execute = (script) => {
+    if (!script) {
+        return;
+    }
     (0, child_process_1.exec)(`npm run ${script}`, (err, stdout, stderr) => {
         if (err) {
             console.error(err);

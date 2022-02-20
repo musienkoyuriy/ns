@@ -1,6 +1,10 @@
 import { exec } from 'child_process';
 
-export const execute = (script: string) => {
+export const execute = (script: string): void => {
+  if (!script) {
+    return;
+  }
+
   exec(`npm run ${script}`, (err, stdout, stderr) => {
     if (err) {
       console.error(err)
