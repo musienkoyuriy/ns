@@ -125,22 +125,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
 const ink_select_input_1 = __importDefault(__webpack_require__(/*! ink-select-input */ "ink-select-input"));
-const ink_1 = __webpack_require__(/*! ink */ "ink");
 const parse_1 = __webpack_require__(/*! @app/lib/services/parse */ "./src/lib/services/parse.ts");
 const execute_1 = __webpack_require__(/*! @app/lib/services/execute */ "./src/lib/services/execute.ts");
 const ScriptsList = (_) => {
-    const [selectedScript, setSelectedScript] = react_1.default.useState('First');
     const [npmScripts, setNpmScripts] = react_1.default.useState([]);
     react_1.default.useEffect(() => {
         (0, parse_1.parseScripts)().then(scripts => setNpmScripts(scripts));
     }, []);
-    const handleSelect = item => {
-        // setSelectedScript(item.label)
+    const handleSelect = react_1.default.useCallback(item => {
         (0, execute_1.execute)(item.value);
-    };
-    return react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(ink_1.Text, null, selectedScript),
-        react_1.default.createElement(ink_select_input_1.default, { items: npmScripts, onSelect: handleSelect }));
+    }, []);
+    return react_1.default.createElement(ink_select_input_1.default, { items: npmScripts, onSelect: handleSelect });
 };
 exports["default"] = ScriptsList;
 
