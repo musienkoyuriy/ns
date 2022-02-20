@@ -30,19 +30,31 @@ const renderApp_1 = __importDefault(__webpack_require__(/*! ./ui/renderApp */ ".
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.execute = void 0;
 const child_process_1 = __webpack_require__(/*! child_process */ "child_process");
+const mapCommandToSpawnReadable = (script) => {
+    const splittedCommand = script.split(' ');
+    const command = splittedCommand[0];
+    const args = splittedCommand.slice(1);
+    return {
+        command,
+        args
+    };
+};
 const execute = (script) => {
     if (!script) {
         return;
     }
-    (0, child_process_1.exec)(`npm run ${script}`, (err, stdout, stderr) => {
-        if (err) {
-            console.error(err);
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-        }
-        console.log(stdout);
-        process.exit(1);
+    const { command, args } = mapCommandToSpawnReadable(script);
+    const child = (0, child_process_1.spawn)(command, args);
+    child.stdout.on('data', data => {
+        process.stdout.write(data);
+    });
+    child.stderr.on('data', err => {
+        console.log(`stderr: `, err);
+    });
+    child.on('exit', (code, signal) => {
+        console.log(`stdout: `, code);
+        console.log(`exit code: ${signal}`);
+        console.log('FINISHED!!!');
     });
 };
 exports.execute = execute;
@@ -74,9 +86,9 @@ exports.parseScripts = void 0;
 const promises_1 = __importDefault(__webpack_require__(/*! fs/promises */ "fs/promises"));
 const path_1 = __importDefault(__webpack_require__(/*! path */ "path"));
 const packageJSONPath = path_1.default.resolve(__dirname, '..', 'package.json');
-const getScriptsFromFile = (file) => Object.keys(file.scripts);
+const getScriptsFromFile = (file) => Object.entries(file.scripts);
 const mapScriptsToSelectList = (scripts) => {
-    return scripts.map((script) => ({ label: script, value: script }));
+    return scripts.map(([script, command]) => ({ label: script, value: command }));
 };
 const parseScripts = () => __awaiter(void 0, void 0, void 0, function* () {
     try {

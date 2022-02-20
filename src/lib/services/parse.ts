@@ -3,10 +3,10 @@ import path from 'path';
 
 const packageJSONPath = path.resolve(__dirname, '..', 'package.json');
 
-const getScriptsFromFile = (file: { [key: string]: any }): string[] => Object.keys(file.scripts);
+const getScriptsFromFile = (file: { [key: string]: any }): [string, unknown][] => Object.entries(file.scripts);
 
-const mapScriptsToSelectList = (scripts: string[]) => {
-  return scripts.map((script: string) => ({ label: script, value: script }));
+const mapScriptsToSelectList = (scripts: [string, unknown][]) => {
+  return scripts.map(([script, command]) => ({ label: script, value: command }));
 }
 
 const parseScripts = async () => {
