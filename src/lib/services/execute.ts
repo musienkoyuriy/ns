@@ -1,9 +1,10 @@
 import { spawn } from 'child_process';
+import { ChildProcessData } from '../types';
 import { findLastIndex, trimQuotes } from '../utils';
 
 const ENV_VARIABLE_REGEXP = /\w\s{0,}=\s{0,}\'{0,}\"{0,}\w\'{0,}\"{0,}/;
 
-const mapCommandToSpawnReadable = (script: string) => {
+const mapCommandToSpawnReadable = (script: string): ChildProcessData => {
   const splittedCommand = script.split(' ');
   const envVarsLastIndex = findLastIndex(splittedCommand, token => ENV_VARIABLE_REGEXP.test(token));
 
@@ -37,7 +38,7 @@ export const execute = (script: string): void => {
     return;
   }
 
-  const { command, args, envVars } = mapCommandToSpawnReadable(script);
+  const { command, args, envVars }: ChildProcessData = mapCommandToSpawnReadable(script);
 
   const child = spawn(command, args, {
     env: {
