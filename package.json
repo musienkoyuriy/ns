@@ -4,7 +4,7 @@
   "description": "An interactive command-line utility for npm scripts navigation",
   "main": "build/index",
   "scripts": {
-    "build": "NODE_ENV='production' npx webpack --config webpack.config.js",
+    "build": "NODE_ENV='production' MODE='asdasd' npx webpack --config webpack.config.js",
     "format": "prettier --write 'src/**/*.*'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "yarn run build",
