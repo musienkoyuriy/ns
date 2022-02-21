@@ -9,13 +9,13 @@ const STRING_IN_QUOTES_REGEXP = /^["'](.+(?=["']$))["']$/;
 * findLastIndex immediately returns that element index. Otherwise, findLastIndex returns -1.
 */
 export const findLastIndex = <T>(array: Array<T>, predicate: (value: T, index: number, obj: T[]) => boolean): number => {
-    let l = array.length;
-    while (l--) {
-        if (predicate(array[l], l, array)) return l;
-    }
-    return -1;
+  let l = array.length;
+  while (l--) {
+    if (predicate(array[l], l, array)) return l;
+  }
+  return -1;
 }
 
 export const trimQuotes = (str: string): string => {
-    return str.replace(STRING_IN_QUOTES_REGEXP, '$1');
+  return str.replace(STRING_IN_QUOTES_REGEXP, '$1');
 }
