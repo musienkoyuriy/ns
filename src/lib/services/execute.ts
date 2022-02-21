@@ -51,12 +51,11 @@ export const execute = (script: string): void => {
   });
 
   child.stderr.on('data', err => {
-    process.stdout.write(`stderr: `, err);
+    process.stderr.write(`stderr: `, err);
   });
 
-  child.on('exit', (code, signal) => {
-    console.log(`stdout: `, code);
-    console.log(`exit code: ${signal}`)
-    console.log('FINISHED!!!');
+  child.on('exit', () => {
+    process.stdout.write('✅ Finished!');
+    process.exit(0);
   });
 }
